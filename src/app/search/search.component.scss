@@ -1,0 +1,24 @@
+@import "../../styles.scss";
+
+
+.dark-background,.modal{
+  background-color: rgba(0, 0, 0, 0.651);
+  color: white;
+}
+
+button {
+  font-family: $montserrat;
+
+  font-weight: 400;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+input, h1{
+  font-family: $poppins;
+}
