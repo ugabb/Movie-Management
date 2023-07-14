@@ -23,7 +23,7 @@
 
 <!-- Modal -->
 <div
-  class="modal fade "
+  class="modal fade"
   id="staticBackdrop"
   data-bs-backdrop="static"
   data-bs-keyboard="false"
@@ -32,7 +32,7 @@
   aria-hidden="true"
 >
   <div class="modal-dialog">
-    <div class="modal-content dark-background ">
+    <div class="modal-content dark-background">
       <div class="modal-header border-0">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Search Movie</h1>
         <button
@@ -45,18 +45,30 @@
       <div class="modal-body">
         <div class="mb-3">
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleFormControlInput1"
             placeholder="Name"
+            (ngModelChange)="searchMovie()"
+            [(ngModel)]="title"
           />
         </div>
       </div>
       <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary bg-white text-black" data-bs-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-secondary bg-white text-black"
+          data-bs-dismiss="modal"
+        >
           Close
         </button>
       </div>
+      <!-- <h1 *ngIf="movie?.Title">Movie Name: {{ movie.Title }}</h1>
+      <img src="{{ movie?.Poster }}" alt="" /> -->
+
+      <app-movie-searched *ngIf="title"
+        movieTitle="{{ movie?.Title }}"
+        moviePoster="{{ movie?.Poster }}"
+      ></app-movie-searched>
     </div>
   </div>
 </div>
